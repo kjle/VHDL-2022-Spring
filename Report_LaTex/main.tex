@@ -1,0 +1,285 @@
+\documentclass[12pt,a4paper]{article}
+
+%recommended by fancyhdr package
+\setlength{\headheight}{14.49998pt}
+\addtolength{\topmargin}{-2.49998pt}
+
+% include a minimal set of useful packages
+\usepackage{graphicx}
+\usepackage{amsfonts} 
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage[a4paper,margin=2cm]{geometry}
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\usepackage{subfigure} 
+\usepackage{booktabs}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{color}
+\usepackage{fontspec}
+\usepackage{hyperref}
+\usepackage{indentfirst}
+
+\setlength{\parindent}{2em}
+
+\hypersetup{
+  hypertex=true,
+  colorlinks=true,
+  linkcolor=black,
+  anchorcolor=black,
+  citecolor=black
+}
+
+\lstset{
+    % basicstyle          =   \sffamily,          % 基本代码风格
+    % keywordstyle        =   \bfseries,          % 关键字风格
+    % commentstyle        =   \rmfamily\itshape,  % 注释的风格，斜体
+    % stringstyle         =   \ttfamily,  % 字符串风格
+    flexiblecolumns,                % 别问为什么，加上这个
+    numbers             =   left,   % 行号的位置在左边
+    showspaces          =   false,  % 是否显示空格，显示了有点乱，所以不现实了
+    showstringspaces    =   false,
+    captionpos          =   t,      % 这段代码的名字所呈现的位置，t指的是top上面
+    frame               =   lrtb,   % 显示边框
+}
+\lstdefinelanguage{VHDL}{
+  keywords=[1]{
+    library,use,all,entity,is,port,in,out,end,architecture,of,
+    begin,and, case, process, when, downto, function, signal, type, variable, if,
+    elsif, loop, return, then, for, others, array, generic, map, wait, after, else, not,
+    constant, False, True
+  },
+  keywords=[2]{
+    std_logic_vector, signed, std_logic, unsigned, to_integer, rising_edge, positive, boolean, time
+  },
+  morecomment=[l]--
+}
+\lstdefinelanguage{ArmAssembler}{
+  morekeywords = {
+    STR, LDR, B, BLT
+  },
+  morecomment = [l]@
+}
+\definecolor{keyword1}{rgb}{0.01, 0.28, 1.0}
+\definecolor{keyword2}{rgb}{0.0, 0.87, 0.87}
+\definecolor{comment}{rgb}{0, 0.35, 0.35}
+\lstdefinestyle{vhdl}{
+  language     = VHDL,
+  basicstyle   = \ttfamily,
+  keywordstyle =[1]\color{keyword1}\bfseries,
+  keywordstyle =[2]\color{keyword2}\bfseries,
+  commentstyle = \color{comment},
+  numberstyle = \tiny,
+  tabsize = 4
+}
+\lstdefinestyle{Arm}{
+  language    = ArmAssembler,
+  basicstyle   = \ttfamily,
+  keywordstyle = \color{keyword1}\bfseries,
+  commentstyle = \color{comment},
+  numberstyle = \tiny,
+  tabsize = 4
+}
+
+% PUT YOUR TITLE AND NAME HERE
+\newcommand{\titlestr}{Processeur Mono-Cycle: Simulation VHDL \\ Project Report}
+\newcommand{\shorttitlestr}{Processeur Mono-Cycle}
+\newcommand{\authorstr}{ } % INSERT YOUR NAME(S)
+
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%555
+% title page
+\begin{titlepage}
+  \centering
+  
+  {\LARGE \titlestr \par}
+
+  \vspace{3cm}
+  % {\Large \authorstr \par}
+
+  {\bf Stu. KANG Jiale , XIE Shifeng} \\
+  {\bf No.  19022100087 , 19022100008} % change student number
+
+  \vspace{2cm}
+  \today     % PUT YOUR DATE HERE
+
+
+  
+  \vspace{1cm}
+  \centering
+  \includegraphics[height=0.2\textwidth]{logo/xidian_logo.pdf}
+  \includegraphics[height=0.15\textwidth]{logo/polytechSorbonne_logo.pdf}
+
+  \vspace{3cm}
+  \flushleft
+  Report submitted for \\
+  \centerline{ {\bf Electronique numérique: VHDL} } 
+  at the 
+  \begin{center}
+    School of Electronic Engineering, Xidian University, \\
+    Department of Electronics and Computer Sciences, Polytech Sorbonne.
+  \end{center}
+
+
+
+  \vspace{2cm}
+  \flushleft
+  Project Area: {\bf Digital Electronics} \\
+  Project Supervisor: {\bf Yann DOUZE , ZONG Ru} \\
+
+
+  \vfill
+\end{titlepage}
+
+% put headings on each page
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\shorttitlestr}
+\rhead{Simulation VHDL}
+% \lhead{\authorstr}
+\rfoot{Page \thepage\ of \pageref{LastPage}}
+\renewcommand{\headrulewidth}{1pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%555
+% abstract
+\include{abstract}
+
+\tableofcontents
+
+
+% main report
+\clearpage
+\include{part1}
+
+\clearpage
+\include{part2}
+
+\clearpage
+\include{part3}
+
+\clearpage
+\include{part4}
+
+\clearpage
+\include{part5}
+
+\clearpage
+\include{part6}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\appendix
+
+\section{Appendices}
+\label{AppendicesA}
+
+In Section \ref{sec:Assemble ALU and Register File}, the full view of the waves in simulation \textbf{Assemble\_ALU\_and\_Regist\_File\_tb.vhd} is shown as Figure \ref{fig:ModelSim_ assemble_processing_unit_tb(test_bench)}.
+
+\begin{figure}[htp]
+  \centering
+  \includegraphics[width=1.5\textwidth,angle = 270]{picture/ModelSim_ assemble_processing_unit_tb(test_bench).pdf}
+  \caption{Simulation Waves of Assemble ALU and Regist\_File}     
+  \label{fig:ModelSim_ assemble_processing_unit_tb(test_bench)}
+\end{figure}
+
+In Section \ref{sec:Simulation for Instruction Management Unit}, the full view of the waves in simulation \textbf{Instruction\_Management\_Unit\_tb.vhd} is shown as Figure \ref{fig:ModelSim_ insmanagement_tb(bench)}.
+
+\begin{figure}[htp]
+  \centering
+  \includegraphics[width=1.5\textwidth, angle=270]{picture/ModelSim_ insmanagement_tb(bench).pdf}
+  \caption{Simulation of Instruction Management Unit}     
+  \label{fig:ModelSim_ insmanagement_tb(bench)}
+\end{figure}
+
+In Section \ref{sec:Instruction Decoder}, the ARM instruction set formats are shown as Figure \ref{fig:AISF}.
+
+\begin{figure}[htp]
+  \centering
+  \includegraphics[width=1\textwidth]{picture/ARM instruction set formats.pdf}
+  \caption{ARM Instruction Set Formats}     
+  \label{fig:AISF}
+\end{figure}
+
+And in the same sectoin (Section \ref{sec:Instruction Decoder}), the detailed information about \texttt{Single Data Transfer} and \texttt{Branch}
+are shown as Figure \ref{fig:Single data transfer instructions} and Figure \ref{fig:Branch instructions}.
+
+\begin{figure}[htp]
+  \centering
+  \includegraphics[width=1\textwidth]{picture/Single data transfer instructions.pdf}
+  \caption{Single Data Transfer Instructions}     
+  \label{fig:Single data transfer instructions}
+\end{figure}
+
+\begin{figure}[htp]
+  \centering
+  \includegraphics[width=1\textwidth]{picture/Branch instructions.pdf}
+  \caption{Branch Instructions}     
+  \label{fig:Branch instructions}
+\end{figure}
+
+In Section \ref{sec:Assemble Processor}, the Block Diagram of Processor as Figure \ref{fig:PU}.
+
+\begin{figure}[htp]
+  \centering
+  \includegraphics[width=1.5\textwidth, angle=270]{picture/PU.pdf}
+  \caption{Processor Block Diagram}     
+  \label{fig:PU}
+\end{figure}
+
+In Section \ref{sec:Simulate Processor}, 
+the full view of the waves in simulation \textbf{Processor\_tb.vhd} in \textbf{part 4} is shown 
+as Figure \ref{fig:ModelSim_ processeur_tb(bench)}.
+\begin{figure}[htp]
+  \centering
+    \includegraphics[width=1.5\textwidth,angle = 270]{picture/ModelSim_ processeur_tb(bench) 1.pdf}
+\end{figure}
+
+\begin{figure}[htp]
+  \centering
+    \includegraphics[width=1.5\textwidth,angle = 270]{picture/ModelSim_ processeur_tb(bench) 2.pdf}
+    \caption{Simulation Waves of Processor in Part 4}  
+  \label{fig:ModelSim_ processeur_tb(bench)}
+\end{figure}
+
+In Section \ref{sec:Test Processor Completely (Test Complet du Processeur)}, 
+the full view of the waves in simulation in \textbf{part 5} is shown 
+as Figure \ref{fig:ModelSim_ processeur_tb(bench) C}.
+\begin{figure}[htp]
+  \centering
+    \includegraphics[width=1.5\textwidth,angle = 270]{picture/ModelSim_ processeur_tb(bench) C 1.pdf}
+\end{figure}
+
+\begin{figure}[htp]
+  \centering
+    \includegraphics[width=1.5\textwidth,angle = 270]{picture/ModelSim_ processeur_tb(bench) C 2.pdf}
+    \caption{Simulation Waves of Processor Completely in Part 5}  
+  \label{fig:ModelSim_ processeur_tb(bench) C}
+\end{figure}
+
+In Section \ref{sec:Increasing the Instruction Set (Augmentation du Jeu d'Instruction)}, 
+the full view of the waves in simulation in \textbf{part 6} is shown 
+as Figure \ref{fig:ModelSim_ assemblage_tous_tb(test_bench)}.
+\begin{figure}[htp]
+  \centering
+    \includegraphics[width=1.5\textwidth,angle = 270]{picture/ModelSim_ assemblage_tous_tb(test_bench) 1.pdf}
+\end{figure}
+
+\begin{figure}[htp]
+  \centering
+    \includegraphics[width=1.5\textwidth,angle = 270]{picture/ModelSim_ assemblage_tous_tb(test_bench) 2.pdf}
+    \caption{Simulation Waves of Processor with IS Increasing in Part 6}  
+  \label{fig:ModelSim_ assemblage_tous_tb(test_bench)}
+\end{figure}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\bibliographystyle{plain}
+\bibliography{bib_file}
+
+\end{document}
+
+
+ 

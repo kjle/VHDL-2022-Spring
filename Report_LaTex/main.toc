@@ -1,0 +1,21 @@
+\contentsline {section}{\numberline {1}Processing Unit (Unité de Traitement)}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Arithmetic Logic Unit (Unité Arithmétique Logique)}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Register File (Banc de Registres)}{4}{subsection.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}Design Register File}{4}{subsubsection.1.2.1}%
+\contentsline {subsubsection}{\numberline {1.2.2}Assemble ALU and Register File}{6}{subsubsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.3}2 to 1 Multiplexer (Multiplexeur 2 vers 1)}{7}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Sign Extension (Extension de Signe)}{8}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Data Memory (Mémoire de Données)}{9}{subsection.1.5}%
+\contentsline {subsection}{\numberline {1.6}Assemble Processing Unit (Assemblage Unité de Traitement)}{10}{subsection.1.6}%
+\contentsline {section}{\numberline {2}Instruction Management Unit (Unité de gestion des instructions)}{12}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Design Instruction Management Unit}{12}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Simulation for Instruction Management Unit}{14}{subsection.2.2}%
+\contentsline {section}{\numberline {3}Control Unit (Unité de Contrôle)}{16}{section.3}%
+\contentsline {subsection}{\numberline {3.1}32-bit Register with Load Instruction (Registre 32-bit avec Commande de Chargement)}{16}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Instruction Decoder (Decodeur d’Instructions)}{17}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Assembly and Validation of Processor (Assemblage et Validation du Processeur)}{22}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Assemble Processor}{22}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Simulate Processor}{25}{subsection.4.2}%
+\contentsline {section}{\numberline {5}Test Processor Completely (Test Complet du Processeur)}{27}{section.5}%
+\contentsline {section}{\numberline {6}Increasing the Instruction Set (Augmentation du Jeu d'Instruction)}{28}{section.6}%
+\contentsline {section}{\numberline {A}Appendices}{30}{appendix.A}%
